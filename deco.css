@@ -9,7 +9,6 @@ button-container {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px 20px;
-    
     align-items: center;
     gap: 10px;
     cursor: pointer;
@@ -58,7 +57,6 @@ nav a {
     margin-left: 15px;
     transition: .3s;
     font-size: 17px;
-
 }
 
 nav a:hover {
