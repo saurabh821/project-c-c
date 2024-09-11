@@ -17,12 +17,14 @@
         /* Header */
         
         header {
+            position: fixed;
             background-color: #333;
             color: white;
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 99%;
         }
         
         header h1 {
@@ -39,23 +41,26 @@
         }
         
         nav a:hover {
-            color: rgb(6, 147, 217);
+            color: rgb(231, 91, 48);
         }
         /* Search Bar */
         
         .search-bar {
             display: flex;
             justify-content: center;
-            padding: 10px;
+            padding: 60px;
+            padding-bottom: 10px;
             background-color: #f1f1f1;
         }
         
         .search-bar input[type="text"] {
             width: 100%;
-            max-width: 300px;
+            max-width: 500px;
             padding: 10px;
+            margin: 7px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin-top: 20px;
         }
         
         .search-bar button {
@@ -66,6 +71,8 @@
             border-radius: 5px;
             margin-left: 10px;
             cursor: pointer;
+            margin: 7px;
+            margin-top: 20px;
         }
         /* Button Container */
         
@@ -101,6 +108,7 @@
             font-weight: bold;
         }
         /* Container */
+        /* Container */
         
         .container {
             display: flex;
@@ -108,32 +116,62 @@
             padding: 20px;
             justify-content: space-between;
         }
+        /* Make both sections equal in height */
+        
+        .left-section {
+            width: 40%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        
+        .right-section {
+            width: 60%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        /* Set width for each section */
         
         .left-section,
         .right-section {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
-            width: 100%;
+            flex: 1;
+            /* Ensure equal width */
+            margin: 10px;
+            max-width: 100%;
         }
-        
-        .left-section {
-            text-align: center;
-        }
+        /* Handle images in sections */
         
         .left-section img {
+            width: 105%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .right-section img {
             width: 100%;
             height: auto;
-            border: 1px solid #ccc;
+            object-fit: cover;
         }
-        /* Responsive Layout */
+        /* For larger screens */
         
         @media (min-width: 768px) {
-            .left-section {
-                width: 30%;
-            }
+            .left-section,
             .right-section {
-                width: 65%;
+                max-width: 48%;
+                /* Limit to 48% each to add space between them */
             }
         }
         /* Columns */
@@ -142,14 +180,25 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 20px 0;
+            padding: 80px 0;
+            scrollbar-width: 10px;
         }
         
-        .column {
-            width: 100%;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 15px;
+        .scroll-box {
+            width: 458px;
+            height: 240px;
+            border: 1px solid #000;
+            padding: 10px;
+            overflow: auto;
+            /* Scroll bar will appear if content exceeds the box size */
+        }
+        /* .scroll-box h3{
+            position: fixed;
+            left: 2px;
+        } */
+        
+        .scroll-box ul {
+            font-size: 25px;
         }
         
         @media (min-width: 768px) {
@@ -225,6 +274,11 @@
             text-decoration: none;
         }
         
+        .login-button:hover {
+            background-color: #a1c4fd;
+            transform: scale(1.05);
+        }
+        
         .download-app {
             display: flex;
             justify-content: space-between;
@@ -252,6 +306,10 @@
             width: 120px;
             height: 40px;
         }
+        
+        .column ul {
+            scroll-behavior: auto;
+        }
         /* Media Queries for Footer */
         
         @media (min-width: 768px) {
@@ -265,14 +323,19 @@
 <body>
 
     <header>
-        <h1>C&C Area</h1>
+        <h1><b>C&C Area </b></h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Contact Me</a>
-            <a href="#">About</a>
-            <a href="http://127.0.0.1:5500/login.html">Login</a>
-            <a href="http://127.0.0.1:5500/signin.html">Sign Up</a>
+            <a href="#" style="font-weight: bold; padding:10px
+            ; ">Home</a>
+            <a href="#" style="font-weight: bold; padding:10px
+            ; ">Contact Me</a>
+            <a href="#" style="font-weight: bold; padding:10px
+            ; ">About</a>
+
+
         </nav>
+        <a href="signin.html" class="login-button" style="background-color: #82badd;color: #000000;text-decoration: none; padding: 10px 20px;border-radius: 25px;font-weight: bold;transition: background-color 0.3s, transform 0.3s;
+ ;">Login/signup</a>
     </header>
 
     <div class="search-bar">
@@ -282,76 +345,145 @@
 
     <div class="button-container">
         <button class="button">
-            <i class="fas fa-home"></i> <span>Remote</span>
+            <i class="fas fa-home"></i> <span>UTTAR PARDESH</span>
         </button>
         <button class="button">
-            <i class="fas fa-building"></i> <span>MNC</span>
+            <i class="fas fa-building"></i> <span>MADHAY PARDESH</span>
         </button>
         <button class="button">
-            <i class="fas fa-user-circle"></i> <span>HR</span>
+            <i class="fas fa-user-circle"></i> <span>PANJAB</span>
         </button>
         <button class="button">
-            <i class="fas fa-shopping-cart"></i> <span>Sales</span>
+            <i class="fas fa-shopping-cart"></i> <span>HARIYANA</span>
         </button>
         <button class="button">
-            <i class="fas fa-chart-line"></i> <span>Data Scien...</span>
+            <i class="fas fa-chart-line"></i> <span>GOA</span>
         </button>
         <button class="button">
-            <i class="fas fa-rocket"></i> <span>Startup</span>
+            <i class="fas fa-rocket"></i> <span>RAJESHTHAN</span>
         </button>
         <button class="button">
-            <i class="fas fa-cog"></i> <span>Engineering</span>
+            <i class="fas fa-cog"></i> <span>DELHI</span>
         </button>
         <button class="button">
-            <i class="fas fa-graduation-cap"></i> <span>Fresher</span>
+            <i class="fas fa-graduation-cap"></i> <span>MAHRASHTA</span>
         </button>
         <button class="button">
-            <i class="fas fa-chart-bar"></i> <span>Analytics</span>
+            <i class="fas fa-chart-bar"></i> <span>TAMILNADU</span>
         </button>
         <button class="button">
-            <i class="fas fa-award"></i> <span>Fortune 500</span>
+            <i class="fas fa-award"></i> <span>KERAL</span>
         </button>
         <button class="button">
-            <i class="fas fa-truck"></i> <span>Supply Ch...</span>
+            <i class="fas fa-truck"></i> <span>BIHAR</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>JAMBU</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>KASHMIR</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>MEGHALAY</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>GUJRAT</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>ASSAM</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>TRIPURA</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>MANIPUR</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>NAGALAND</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>NAGALAND</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>NAGALAND</span>
         </button>
     </div>
 
     <div class="container">
         <div class="left-section">
-            <img src="photo-placeholder.png" alt="photo">
-            <p>Description of the photo or related content goes here.</p>
+            <img src="WhatsApp Image 2024-09-02 at 11.34.00_c14d4340.jpg" alt="photo">
+            <p>This applictaion is help to search collage and job <br><br> C$C AREA = COLLAGE $ CARRER AREA
+            </p>
         </div>
         <div class="right-section">
-            <h2>Welcome to C&C Area</h2>
-            <p>Description of the website or other related content goes here.</p>
+
+            <img src="iit.jpeg" alt="">
         </div>
     </div>
 
     <div class="columns">
-        <div class="column">
-            <h3>Colleges</h3>
+        <div class="scroll-box">
+
+            <h3>Colleges</h3> <button>state</button>
             <ul>
-                <li>College 1</li>
-                <li>College 2</li>
-                <li>College 3</li>
-                <li>College 4</li>
+                <li>PSIT kanpur</li>
+                <li>MPGI kanpur</li>
+                <li>dfd</li>
+                <li>fdd</li>
+                <li>fdd</li>
+                <li>fdd</li>
+                <li>fdd</li>
+                <li>fdd</li>
+                <li>fdd</li>
+                <li>fdd</li>
             </ul>
         </div>
-        <div class="column">
+        <div class="scroll-box">
             <h3>IIT/NIT/IIM</h3>
             <ul>
                 <li>Institute 1</li>
                 <li>Institute 2</li>
                 <li>Institute 3</li>
                 <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
+                <li>Institute 4</li>
             </ul>
         </div>
-        <div class="column">
+        <div class="scroll-box">
             <h3>Job Apply/Freshers</h3>
             <ul>
                 <li>Job 1</li>
                 <li>Job 2</li>
                 <li>Job 3</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
+                <li>Job 4</li>
                 <li>Job 4</li>
             </ul>
         </div>
