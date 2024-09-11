@@ -5,7 +5,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C&C Area</title>
-    <link rel="stylesheet" href="deco.css">
+    <style>
+        /* General styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Header */
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: .3s;
+            font-size: 17px;
+        }
+        
+        nav a:hover {
+            color: rgb(6, 147, 217);
+        }
+        /* Search Bar */
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+        
+        .search-bar input[type="text"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .search-bar button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        /* Button Container */
+        
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+        
+        .button {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .button i {
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .button span {
+            font-weight: bold;
+        }
+        /* Container */
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        
+        .left-section,
+        .right-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .left-section {
+            text-align: center;
+        }
+        
+        .left-section img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        /* Responsive Layout */
+        
+        @media (min-width: 768px) {
+            .left-section {
+                width: 30%;
+            }
+            .right-section {
+                width: 65%;
+            }
+        }
+        /* Columns */
+        
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        .column {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .column {
+                width: 48%;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .column {
+                width: 30%;
+            }
+        }
+        /* Footer */
+        
+        footer {
+            background-color: #e6d078;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3b5998;
+            color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        
+        .download-app {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        .download-app a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .download-app a:hover {
+            background-color: #ddd;
+        }
+        
+        .download-app img {
+            width: 120px;
+            height: 40px;
+        }
+        /* Media Queries for Footer */
+        
+        @media (min-width: 768px) {
+            .download-app {
+                width: 30%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -13,55 +267,54 @@
     <header>
         <h1>C&C Area</h1>
         <nav>
-            <a href="#">home</a>
-            <a href="#">contact me</a>
-            <a href="#">about</a>
-            <a href="http://127.0.0.1:5500/login.html">login</a>
-            <a href="http://127.0.0.1:5500/signin.html">sign up</a>
+            <a href="#">Home</a>
+            <a href="#">Contact Me</a>
+            <a href="#">About</a>
+            <a href="http://127.0.0.1:5500/login.html">Login</a>
+            <a href="http://127.0.0.1:5500/signin.html">Sign Up</a>
         </nav>
     </header>
 
     <div class="search-bar">
         <input type="text" placeholder="Search anything">
         <button>Search</button>
-    </div><br>
-    <div class="button-container">
-          <button class="button">
-            <i class="fas fa-home"></i> <span>Remote</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-building"></i> <span>MNC</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-user-circle"></i> <span>HR</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-shopping-cart"></i> <span>Sales</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-chart-line"></i> <span>Data Scien...</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-rocket"></i> <span>Startup</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-cog"></i> <span>Engineering</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-graduation-cap"></i> <span>Fresher</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-chart-bar"></i> <span>Analytics</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-award"></i> <span>Fortune 500</span>
-          </button>
-          <button class="button">
-            <i class="fas fa-truck"></i> <span>Supply Ch...</span>
-          </button>
-        
-</div>
+    </div>
 
+    <div class="button-container">
+        <button class="button">
+            <i class="fas fa-home"></i> <span>Remote</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-building"></i> <span>MNC</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-user-circle"></i> <span>HR</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-shopping-cart"></i> <span>Sales</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-chart-line"></i> <span>Data Scien...</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-rocket"></i> <span>Startup</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-cog"></i> <span>Engineering</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-graduation-cap"></i> <span>Fresher</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-chart-bar"></i> <span>Analytics</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-award"></i> <span>Fortune 500</span>
+        </button>
+        <button class="button">
+            <i class="fas fa-truck"></i> <span>Supply Ch...</span>
+        </button>
+    </div>
 
     <div class="container">
         <div class="left-section">
@@ -94,7 +347,7 @@
             </ul>
         </div>
         <div class="column">
-            <h3>Job apply/freshers</h3>
+            <h3>Job Apply/Freshers</h3>
             <ul>
                 <li>Job 1</li>
                 <li>Job 2</li>
@@ -102,34 +355,47 @@
                 <li>Job 4</li>
             </ul>
         </div>
-
     </div>
     <hr style="color: black;">
 
     <footer>
         <div class="container">
             <div class="logo">
-
                 <h2>C&C Area</h2>
             </div>
 
             <div class="links">
                 <div>
-                    <a href="#">About us</a>
+                    <a href="#">About Us</a>
                     <a href="#">Careers</a>
-                    <a href="#">Employer home</a>
+                    <a href="#">Employer Home</a>
                     <a href="#">Sitemap</a>
                     <a href="#">Credits</a>
                 </div>
                 <div>
-                    <a href="#">Help center</a>
+                    <a href="#">Help Center</a>
                     <a href="#">Summons/Notices</a>
                     <a href="#">Grievances</a>
-                    <a href="#">Report issue</a>
+                    <a href="#">Report Issue</a>
                 </div>
                 <div>
-                    <a href="#">Privacy policy</a>
-                    �
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-linkedin-in"></a>
+            </div>
+
+            <div class="download-app">
+                <a href="#"><img src="google-play-badge.png" alt="Google Play Store"></a>
+                <a href="#"><img src="app-store-badge.png" alt="Apple App Store"></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
