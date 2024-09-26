@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Container for the main layout */
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 50vh;
+        }
+        /* Header styling */
+        
+        header {
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Main content area */
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        /* Content and image area */
+        
+        .box {
+            height: 600px;
+            /* Fixed height for the box */
+            width: 50%;
+            overflow-y: auto;
+            /* Enables vertical scrolling */
+            border: 1px solid #000;
+            /* Optional: Adds a border to visualize the box */
+            padding: 10px;
+        }
+        
+        .content-area {
+            flex: 2;
+        }
+        
+        .content-box {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        
+        .content-box img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        /* Side image styling */
+        
+        .side-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        
+        .side-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        /* Footer styling */
+        
+        footer {
+            background-color: #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Responsive design */
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .box {
+                width: 100%;
+                /* Make the box full width on smaller screens */
+                height: 300px;
+                /* Adjust height as needed */
+                margin-bottom: 20px;
+            }
+            .content-area {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>C & C Area</h1>
+        </header>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Left content area -->
+            <div class="box">
+                <div class="content-area">
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                    <div class="content-box">
+                        <img src="image.jpg" alt="image">
+                        <div class="content-text">
+                            <p>Content text goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side image area -->
+            <div class="side-image">
+                <img src="image.jpg" alt="Side Image">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Footer content here</p>
+        </footer>
+    </div>
+</body>
+
+</html>
