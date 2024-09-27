@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C&C Area</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <style>
         /* General styles */
         /* General styles */
@@ -84,22 +85,36 @@
             padding: 20px;
             justify-content: center;
             align-items: center;
+            
         }
         
         .button {
             background-color: white;
-            border: 3px solid #171461;
+            border: 1px solid #797890;
             border-radius: 55px;
             padding: 10px 20px;
+            text-decoration: none;
+            
+            /* padding: 11px; */
            
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            flex: 1 1 200px;
+            background-color: #e4f7f7;
+            /* flex: 1 1 200px; */
+        }
+        .button a {
+         text-decoration: none;
+         color: black;
+        }
+        .button a:hover {
+         text-decoration: underline;
+         color: rgb(8, 5, 5);
         }
         
         .button:hover {
-            background-color: #f5f5f5;
+            background-color: white;
+
         }
         
         .button i {
@@ -238,6 +253,9 @@
             width: 120px;
             height: 40px;
         }
+        .button span{
+            font-size: 12px;
+        }
     </style>
 </head>
 
@@ -266,7 +284,7 @@
 
     <div class="button-container">
         <button class="button">
-            <a href="uttarpradeshinside.html"><i class="fas fa-home"></i> <span>UTTAR PARDESH</span></a>
+            <a href="uttarpradeshinside.html"><i class="fa fa-home"></i> <span>UTTAR PARDESH</span></a>
         </button>
         <button class="button">
            <a href="uttarpradeshinside.html"> <i class="fas fa-building"></i> <span>MADHAY PARDESH</span></a>
